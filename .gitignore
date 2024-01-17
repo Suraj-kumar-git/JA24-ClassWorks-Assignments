@@ -1,0 +1,25 @@
+# Eclipse related files
+.classpath
+.project
+.settings/
+
+# Compiled class files
+bin/
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# User-specific files
+*.suo
+*.user
+*.swp
+*.DS_Store
+
+# OS-specific files
+Thumbs.db
+.DS_Store

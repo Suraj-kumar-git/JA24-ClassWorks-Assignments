@@ -1,0 +1,13 @@
+create table a(eid int,ename varchar(50));
+create table b(did int,dname varchar(50));
+insert into a values(1,'Suraj'),(2,'Pranay');
+select * from a;
+insert into b values(1,'HR'),(2,'IT');
+select * from b;
+select a.eid,a.ename,b.did,b.dname from a inner join b on a.eid=b.did;
+select a.eid,a.ename,b.did,b.dname from a inner join b on a.eid!=b.did;
+select a.eid,a.ename from a left outer join b on a.eid=b.did;
+select a.eid,a.ename from a right outer join b on a.eid=b.did;
+select a.eid,a.ename from a left outer join b on a.eid=b.did union select a.eid,a.ename from a right outer join b on a.eid=b.did;
+select a.eid,a.ename from a cross join b on a.eid=b.did;
+select a.eid,a.ename from a cross join b;

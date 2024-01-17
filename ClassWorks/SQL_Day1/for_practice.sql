@@ -1,0 +1,12 @@
+show databases;
+use hexaware;
+show tables;
+create table customer(id int primary key,cname varchar(50) not null,c_number int unique);
+insert into customer values (1,'Suraj',73546492);
+select * from customer;
+insert into customer values (null,'Anoop',73546492);
+insert into customer values (2,null,7354642);
+insert into customer values (2,'Palash',7356492);
+select * from customer;
+insert into customer values (2,'Ratnesh',356492);
+drop table customer;

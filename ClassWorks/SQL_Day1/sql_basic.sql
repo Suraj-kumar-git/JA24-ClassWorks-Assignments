@@ -1,0 +1,16 @@
+use Hexaware;
+create table dep(id int unique,dname varchar(50) not null);
+insert into dep values(1,'Suraj');
+select * from dep;
+insert into dep values(2,null);
+insert into dep values(1,'Anoop');
+select * from dep;
+drop table dep;
+create table dep(id int not null,dname varchar(50) unique);
+insert into dep values(1,'Suraj');
+select * from dep;
+insert into dep values(null,'Anoop');
+insert into dep values(2,'Anoop');
+select * from dep;
+insert into dep values(1,'Suraj');
+select * from dep;

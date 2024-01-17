@@ -1,0 +1,17 @@
+use hexaware;
+create table employees(eid int,ename varchar(50));
+create table details (eid int,did int, sal int);
+create table department(did int,dname varchar(50), manager varchar(50));
+insert into employees values(1,'Suraj'),(2,'Ratnesh'),(3,'Pranay'),(4,'Sheshank'),(5,'Palash');
+select * from employees;
+insert into department values(45,'HR','AS'),(34,'Sales','qqw'),(56,'IT','qwe'),(12,'Mrkt','jkl');
+select * from department;
+insert into details values(2,45,30000),(4,34,12000),(1,56,55000),(5,12,23000),(3,56,45000);
+select * from details;
+select e.eid,e.ename,dep.dname,det.sal from employees e inner join details det on e.eid=det.eid inner join department dep on det.did=dep.did;
+select e.eid,e.ename,det.sal as salary from employees e left outer join details det on e.eid=det.eid;
+select e.eid,e.ename,det.sal as salary from employees e right outer join details det on e.eid=det.eid;
+select * from employees e cross join details det;
+select e.eid,e.ename,det.sal as salary from employees e cross join details det on det.eid = e.eid;
+delete from details where eid=4;
+delete from department where did = 12;
