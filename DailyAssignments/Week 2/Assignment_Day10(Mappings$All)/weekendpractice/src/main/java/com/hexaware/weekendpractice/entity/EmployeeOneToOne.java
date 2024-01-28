@@ -3,6 +3,7 @@ package com.hexaware.weekendpractice.entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -66,8 +67,10 @@ public class EmployeeOneToOne {
 	}
 	@Override
 	public String toString() {
-		return "Employee [eid=" + eid + ", ename=" + ename + ", salary=" + salary + "]";
+		return "EmployeeOneToOne [eid=" + eid + ", ename=" + ename + ", salary=" + salary + ", address=" + address
+				+ "]";
 	}
+
 	
 	
 }

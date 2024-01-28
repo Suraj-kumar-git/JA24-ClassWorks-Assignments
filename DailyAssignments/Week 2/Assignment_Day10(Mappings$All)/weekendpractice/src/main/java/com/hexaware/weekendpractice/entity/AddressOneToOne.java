@@ -13,9 +13,9 @@ public class AddressOneToOne {
 	@Id
 	private int addressId;
 	private String city;
-//	@OneToOne(mappedBy="address")
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="Emp_id")
+	@OneToOne(mappedBy="address")
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name="Emp_id")
 	//@Column not allowed for OneToOne mapping
 	private EmployeeOneToOne emp;
 
@@ -59,4 +59,10 @@ public class AddressOneToOne {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	@Override
+	public String toString() {
+		return "AddressOneToOne [addressId=" + addressId + ", city=" + city+ "]";
+	}
+	
 }

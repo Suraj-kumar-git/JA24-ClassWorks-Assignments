@@ -3,15 +3,15 @@ package com.hexaware.weekendpractice.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Emp1ToMany")
-//@NamedQueries({
-//	@NamedQuery(name="getAllEmployee",query="select e from Employee e"),
-//	@NamedQuery(name="getAllEmployeeByName",query="select e from Employee e where e.ename = :name")
-//})
+@NamedQueries(
+		@NamedQuery(name="deleteEmployeeById",query="delete from EmployeeOneToMany e where e.eid=?1")
+		)
 public class EmployeeOneToMany {
 	
 	@Id
@@ -22,8 +22,7 @@ public class EmployeeOneToMany {
 	
 	private double salary;
 	
-	@ManyToOne
-	private DepartmentOneToMany department;
+//	private DepartmentOneToMany department;
 	public EmployeeOneToMany() {
 		super();
 	}

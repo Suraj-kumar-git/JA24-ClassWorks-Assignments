@@ -7,11 +7,17 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="dept1Tox")
+@NamedQueries({
+	@NamedQuery(name="selectAllDepartments",query="select d from DepartmentOneToMany d"),
+	@NamedQuery(name="updateDepartmentById",query="update DepartmentOneToMany d set d.departmentName= ?1 where d.departmentId=?2"),
+})
 public class DepartmentOneToMany {
 	@Id
 	private int departmentId;
@@ -53,5 +59,11 @@ public class DepartmentOneToMany {
 	public void setEmployeeSet(Set<EmployeeOneToMany> employeeSet) {
 		this.employeeSet = employeeSet;
 	}
+	@Override
+	public String toString() {
+		return "DepartmentOneToMany [departmentId=" + departmentId + ", departmentName=" + departmentName
+				+ ", employeeSet=" + employeeSet + "]";
+	}
+	
 	
 }
